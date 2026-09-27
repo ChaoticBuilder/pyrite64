@@ -55,6 +55,7 @@ namespace Project
     // optional manual override of the auto-computed model import scale (0 = auto)
     int baseScaleOverride{0};
     bool gltfBVH{0};
+		bool monochrome{false};
 
     ComprTypes compression{ComprTypes::DEFAULT};
     bool exclude{false};

@@ -183,6 +183,7 @@ void Editor::AssetInspector::draw() {
 
       ImTable::add("Charset");
       ImGui::InputTextMultiline("##", &asset->conf.fontCharset.value);
+    	ImTable::addCheckBox("Antialias", asset->conf.monochrome);
     }
     else if (asset->type == FileType::AUDIO)
     {

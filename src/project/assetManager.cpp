@@ -103,6 +103,7 @@ namespace
       Utils::JSON::readProp(doc, conf.wavCompression);
       Utils::JSON::readProp(doc, conf.fontId);
       Utils::JSON::readProp(doc, conf.fontCharset);
+      conf.monochrome = doc.value<bool>("fontAntialias", false);
 
       conf.data = doc.contains("data") ? doc["data"] : nlohmann::json::object();
       conf.exclude = doc["exclude"];
@@ -252,6 +253,7 @@ std::string Project::AssetConf::serialize() const {
     .set(wavCompression)
     .set(fontId)
     .set(fontCharset)
+    .set("fontAntialias", monochrome)
     .set("exclude", exclude)
     .set("data", data)
     .toString();
